@@ -3,31 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Жорданові виключення</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звичайні Жорданові виключення</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Звичайні Жорданові виключення</h1>
+    <div class="app-container">
+        <header>
+            <h1>Звичайні Жорданові виключення (ЗВЖ)</h1>
+            <p>Інструмент для обчислення оберненої матриці, рангу та розв'язання СЛАР</p>
+        </header>
 
-    <h3>Матриця A</h3>
-    <textarea id="matrixA">1 2 1
+        <main>
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="matrixA">Матриця A</label>
+                    <textarea id="matrixA" placeholder="Введіть матрицю (числа через пробіл)">1 2 1
 -1 1 3
 2 5 -2</textarea>
+                </div>
 
-    <h3>Вектор B (для СЛАР)</h3>
-    <textarea id="matrixB">2
+                <div class="input-group">
+                    <label for="matrixB">Вектор B (для СЛАР)</label>
+                    <textarea id="matrixB" placeholder="Введіть вектор">2
 5
 1</textarea>
+                </div>
+            </div>
 
-    <div class="buttons">
-        <button onclick="calcInverse()">Обернена матриця</button>
-        <button onclick="calcRank()">Ранг матриці</button>
-        <button onclick="calcSolve()">Розв'язати СЛАР</button>
+            <div class="buttons">
+                <button class="btn btn-primary" onclick="calcInverse()">Обернена матриця</button>
+                <button class="btn btn-secondary" onclick="calcRank()">Ранг матриці</button>
+                <button class="btn btn-accent" onclick="calcSolve()">Розв'язати СЛАР</button>
+            </div>
+
+            <div class="output-section">
+                <h3>Результати та протокол</h3>
+                <pre id="output">Тут з'явиться результат обчислень...</pre>
+            </div>
+        </main>
     </div>
-
-    <pre id="output"></pre>
 
     <script src="app.js"></script>
 </body>

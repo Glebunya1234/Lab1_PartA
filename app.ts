@@ -13,13 +13,6 @@ function formatMatrix(m: number[][]): string {
     ).join("\t")).join("\n");
 }
 
-/**
- * Крок Жорданових виключень за вчительською логікою:
- * Півот: 1/pivot
- * Рядок: -A/pivot
- * Стовпець: A/pivot
- * Прямокутник: за стандартною формулою
- */
 function jordanStep(matrix: number[][], r: number, s: number): number[][] {
     const n = matrix.length;
     const m = matrix[0].length;
@@ -56,7 +49,7 @@ function calcInverse() {
     const n = A.length;
     const m = A[0].length;
 
-    // ПЕРЕВІРКА НА КВАДРАТНІСТЬ
+
     if (n !== m) {
         alert("Помилка: Знайти обернену матрицю можна тільки для квадратної матриці!");
         return;
@@ -78,7 +71,7 @@ function calcRank() {
     protocol = "";
     const A = parseMatrix((document.getElementById("matrixA") as HTMLTextAreaElement).value);
 
-    // Для рангу матриця може бути НЕ квадратною
+
     let res = A.map(row => [...row]);
     const rows = res.length;
     const cols = res[0].length;
